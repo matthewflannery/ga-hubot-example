@@ -18,7 +18,7 @@ module.exports = bot => {
   });
 
 
-  bot.hear(/message (.*)/, res => {
+  bot.hear(/mtn (.*)/, res => {
     const userToMessage = res.match[1];
     res.send(`@${userToMessage}`)
   });
