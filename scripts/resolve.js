@@ -5,28 +5,41 @@ module.exports = bot => {
   // Perform a simple DNS lookup
   bot.respond(/resolve (.*)/, res => {
     const sourceAddr = res.match[1]
-    target = sourceAddr.replace(/http:\/\//,"")
-    // if (persistedData.includes(target)) {
-    //   res.send("This target was already scanned during this session!");
-    // }
+    const target = sourceAddr.replace(/http:\/\//,"")
+
+    const append = (name, item) => {
+      const curr = bot.brain.get(name);
+      const hasItems = curr && curr.length > 0;
+      const items = hasItems ? [...curr, item] : [item];
+      if (hasItems && curr.includes(item)) {
+         res.send("This target was already scanned during this session! So the result was not persisted.");
+         //console.log("Result already in");
+         return false;
+      }
+      // console.log(items);
+      bot.brain.set(name, items);
+    };
 
     const lookup = dns.lookup(target, (err, match) => {
-      console.log(match)
-      domainsScanned = bot.brain.set('domains', match)
-      console.log(domainsScanned)
+      append('domains', match)
       res.send(sourceAddr, match)
-    })
+      //console.log(sourceAddr, 'resolved to', match)
+    });
   });
 
-  bot.respond(/reset things/i, res => {
-    numThings = bot.brain.set('things', 0)
-    res.send('Reset all the things');
+  // List the scans and send each item within the returned array using a forEach loop.
+  bot.respond(/list scans/i, res => {
+    const curr = bot.brain.get('domains')
+    curr.forEach(function(item,index,array) {
+          res.send(item)
+    });
   });
+  
+  /* Only useful for testing p much
+  bot.respond(/reset domains/i, res => {
+    domainsScanned = bot.brain.set('domains', 0)
+    res.send('Reset scanned domains');
+  });
+  */
 
-  // Persist the data to Hubots KV store
-  bot.respond(/do a thing/i, res => {
-    numThings = bot.brain.get('things')
-    bot.brain.set('things', numThings+1)
-    console.log(numThings);
-  });
 }

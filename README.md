@@ -77,7 +77,10 @@ Simple script to resolve a DNS name, and store the result in Hubots built in K/V
 
 **Usage**
 `@BOTNAME resolve domain.com`
+Will resolve the DNS name to an IP address, and persist the result within a DB.
 
+`@BOTNAME list scans`
+Using a forEach loop, will iterate through each stored result from previous scans.
 
 ##### interactions.js
 
