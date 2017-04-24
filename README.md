@@ -21,12 +21,15 @@ This assumes you have the [Heroku toolbelt][heroku-toolbelt] and [Have a Heroku 
 Simply clone this git repository, login to Heroku, create a new application, push your code base and deploy. Deployment instructions are as per below, and also instructions for testing locally are provided.
 
 Login to Heroku
+
 `heroku login`
 
 Create a new application on Heroku
+
 `heroku create myhubotappnamehere`
 
 Connect your local repository to Heroku
+
 `git remote add heroku https://git.heroku.com/myhubotappnamehere`
 
 Obtain Slack token by browsing to https://my.slack.com/services/new/hubot - ensure that you are signed into the correct team, fill out the relevant details and note down your key for the next step.
@@ -34,17 +37,21 @@ Obtain Slack token by browsing to https://my.slack.com/services/new/hubot - ensu
 Add the following configs for Slack
 
 `heroku config:add HEROKU_URL=https://myhubotapp.herokuapp.com`
+
 `heroku config:add HUBOT_SLACK_TOKEN=YourTokenGoesHere`
 
 Deploy your codebase to your newly created Heroku application
+
 `git push heroku master`
 
 Enable your Heroku Slackbot application with the following
+
 `heroku ps:scale web:1`
 
 ### Testing locally
 
 To test your Hubot Slackbot application locally, simply execute the following command
+
 `HUBOT_SLACK_TOKEN=TOKEN-GOES-HERE ./bin/hubot --adapter slack`
 
 
