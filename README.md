@@ -46,9 +46,9 @@ This section defines scripts provided within the repository, which you can furth
 
 | Script | Location| Description|
 | ------ | ------ | ------ |
-| interactions | [scripts/interactions.js] [PlDb] | Chat features, respond to various user input
-| threatcrowdApi | [scripts/threatcrowdApi.js] [PlGh] | Leverages the Threatcrowd API (threatcrowd.org) to perform DNS reconnaissance against a target
-| resole | [scripts/resolve.js] [PlGd] | Simple script to resolve a DNS name, and persist the result to a Redis K/V store.
+| interactions | [scripts/interactions.js](scripts/interactions.js) | Chat features, respond to various user input
+| threatcrowdApi | [scripts/threatcrowdApi.js](scripts/threatcrowdApi.js) | Leverages the Threatcrowd API (threatcrowd.org) to perform DNS reconnaissance against a target
+| resolve | [scripts/resolve.js](scripts/resolve.js) | Simple script to resolve a DNS name, and persist the result to a Redis K/V store.
 
 ##### threatcrowdApi.js
 Simple Hubot script that performs a lookup against the Threatcrowd API for a user supplied target domain as input, and returns the results. further improvement would be to automate the script to run at an interval, persist retrieved information to an SQL DB, analyse if the new domain record has been persisted previously and send a Push / Slack notification if a new domain record has been found.
