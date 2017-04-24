@@ -13,7 +13,7 @@ module.exports = bot => {
     bot.hear(/threatcrowd (.*)/, res => {
         const domain = res.match[1]
         const target = `http://www.threatcrowd.org/searchApi/v2/domain/report/?domain=${domain}`
-        res.send(`Using Threatcrowd API to scan ${res.match[1]}`);
+        res.send(`https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTcJWBx65MbmuSVfBtrzti-xxzbW3wmRM_pFDdYq47-82WzhFU4RgQ5YBk Using Threatcrowd API to scan ${res.match[1]}`);
         const grabSubdomainsForDomain = domain => {
                 request(target.replace(/domain=http:\/\//,"domain="), function (err, response, body) {
                         if (!err && response.statusCode === 200) {
