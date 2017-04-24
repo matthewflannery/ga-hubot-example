@@ -47,9 +47,9 @@ module.exports = bot => {
     const action = res.match[2];
 
     if (action === 'launch the nukes') {
-      return res.send('Now we are talking! Launching the nukes!')
+      return res.send('Now we are talking! Launching the nukes! :trollface:')
     } else if (known_phrases.includes(action)) {
-      return res.send('Roger that. Lauching nuclear weapons.')
+      return res.send('Roger that. Lauching nuclear weapons. :trollface:')
     } else {
       return res.reply(`I do not know how to ${action}, i'm a nuclear warfare robot! Stop being silly`)
     }
