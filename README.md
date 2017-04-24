@@ -68,7 +68,7 @@ This section defines scripts provided within the repository, which you can furth
 ##### threatcrowdApi.js
 Simple Hubot script that performs a lookup against the Threatcrowd API for a user supplied target domain as input, and returns the results. further improvement would be to automate the script to run at an interval, persist retrieved information to an SQL DB, analyse if the new domain record has been persisted previously and send a Push / Slack notification if a new domain record has been found.
 
-**Usage**
+###### Usage
 
 `threatcrowd domain.com`
 
@@ -76,7 +76,7 @@ Simple Hubot script that performs a lookup against the Threatcrowd API for a use
 
 Simple script to resolve a DNS name, and store the result in Hubots built in K/V store.
 
-**Usage**
+###### Usage
 
 `@BOTNAME resolve domain.com`
 Will resolve the DNS name to an IP address, and persist the result within a DB.
@@ -88,7 +88,7 @@ Using a forEach loop, will iterate through each stored result from previous scan
 
 This script provides basic chat features to interact with user input, returning a different response based on the input. The code is well documented, but as a brief overview:
 
-**Ask the bot if GA class is on today**
+###### Ask the bot if GA class is on today
 
 There is a conditional outcome based on user input leveraging RegEx to be somewhat intelligent in replies. As an example, "do we have class today" or "are we going to class today" - will give the replies:
 
@@ -96,23 +96,22 @@ There is a conditional outcome based on user input leveraging RegEx to be somewh
 
 This could be further extended with or else if conditions to satisfy non matching regex or even additinal regex conditions such as `is class today`, which won't give a reply, but you get the general idea.
 
-**Make a statement when a user joins / leaves**
+###### Make a statement when a user joins / leaves
 
 When a user enters, either of one "Hello" || "Target acquired" || "ohai" will be sent to the channel.
 When a user leaves, either one of "RIP" || "kthxbye" || "lat@@@@" will be sent to the channel.
 
-**Mention a user**
+###### Mention a user
 
 Uses the respond method to send a mention to a user in the channel.
 
 `@BOTNAME mtn USERNAME hello from Hubot!`
 
 
-**Receive a sarcastic reply about nuclear warfare**
+###### Receive a sarcastic reply about nuclear warfare
 
 `NAMEbot can you launch the nukes`
 
 `NAMEbot can you not launch the nukes || can you please not launch the nuclear weapons || can you for the love of god, whatever you do, do not launch the nukes`
 
 `NAMEbot can you $ANYTHINGELSE`
-
