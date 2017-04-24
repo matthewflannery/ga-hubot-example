@@ -36,12 +36,10 @@ module.exports = bot => {
     res.reply(res.random(onLeaveMsg));
   });
 
-  /* Listens for *name*bot as the bot may be named differently depending on
-  where it's being used. Determines if the user input is known or not,
-  then answers with a sarcastic reply. Because, a little bit of sarcasm
-  never hurt anybody... right? */
+  /* @TODO: This has been entirely refactored, so that the user simply talks to the bot about nukes
+  and it will respond about nukes. Heuristics, yo */
   bot.hear(/([Bb]ot) can you (.*)/i, res => {
-    // res.match is an array of matches
+
     console.log(res.match);
     known_phrases = ['launch the nukes', 'not launch the nukes', 'please not launch the nuclear weapons', 'for the love of god, whatever you do, do not launch the nukes']
     const action = res.match[2];
