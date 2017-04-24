@@ -111,8 +111,8 @@ Uses the respond method to send a mention to a user in the channel.
 **Receive a sarcastic reply about nuclear warfare**
 
 `NAMEbot can you launch the nukes`
-Returns "Now we are talking! Launching the nukes!""
+
 `NAMEbot can you not launch the nukes || can you please not launch the nuclear weapons || can you for the love of god, whatever you do, do not launch the nukes`
-Returns "Roger that. Lauching nuclear weapons."
+
 `NAMEbot can you $ANYTHINGELSE`
-Returns I do not know how to $ANYTHINGELSE, i'm a nuclear warfare robot! Stop being silly
+
