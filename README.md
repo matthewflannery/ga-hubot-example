@@ -8,6 +8,14 @@ deployed on [Heroku][heroku] to get you up and running as quick as possible.
 [hubot]: http://hubot.github.com
 [generator-hubot]: https://github.com/github/generator-hubot
 
+
+### Prerequisites
+
+This assumes you have the [Heroku toolbelt][heroku-toolbelt] and [Have a Heroku account][heroku]
+
+[heroku-toolbelt]: https://toolbelt.heroku.com/
+[heroku]: http://www.heroku.com
+
 ### Installation
 
 Simply clone this git repository, login to Heroku, create a new application, push your code base and deploy. Deployment instructions are as per below, and also instructions for testing locally are provided.
